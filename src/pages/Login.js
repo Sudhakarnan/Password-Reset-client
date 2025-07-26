@@ -13,7 +13,7 @@ export default function Login() {
     e.preventDefault();
     setMsg('');
     try {
-      await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      await axios.post('https://password-reset-server-polr.onrender.com/api/auth/login', { email, password });
       setMsg('Login successful!');
       setTimeout(() => navigate('/'), 1500);
     } catch (err) {

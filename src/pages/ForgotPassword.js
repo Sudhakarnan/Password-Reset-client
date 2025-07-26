@@ -10,7 +10,7 @@ export default function ForgotPassword() {
     e.preventDefault();
     setMsg('');
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/forgot-password', { email });
+      const res = await axios.post('https://password-reset-server-polr.onrender.com/api/auth/forgot-password', { email });
       setMsg(res.data.message);
     } catch (err) {
       setMsg(err.response?.data?.message || 'Error');
