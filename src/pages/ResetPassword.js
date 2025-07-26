@@ -12,7 +12,7 @@ export default function ResetPassword() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`https://fsd-password-reset-api.onrender.com/api/auth/reset-password/${token}`)
+    axios.get(`https://password-reset-server-polr.onrender.com/api/auth/reset-password/${token}`)
       .then(() => setValid(true))
       .catch(() => setMsg('Token expired or invalid!'));
   }, [token]);
@@ -21,7 +21,7 @@ export default function ResetPassword() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post(`https://fsd-password-reset-api.onrender.com/api/auth/reset-password/${token}`, { password });
+      const res = await axios.post(`https://password-reset-server-polr.onrender.com/api/auth/reset-password/${token}`, { password });
       setMsg(res.data.message);
       setTimeout(() => navigate('/login'), 1500);
     } catch (err) {

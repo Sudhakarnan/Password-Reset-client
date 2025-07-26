@@ -15,7 +15,7 @@ export default function Login({ setLoggedIn }) {
     setLoading(true);
     setMsg('');
     try {
-      await axios.post('https://fsd-password-reset-api.onrender.com/api/auth/login', { email, password });
+      await axios.post('https://password-reset-server-polr.onrender.com/api/auth/login', { email, password });
       setMsg('Login successful!');
       localStorage.setItem('loggedIn', 'yes');
       setLoggedIn(true);
