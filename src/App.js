@@ -30,6 +30,7 @@ function App() {
           </PrivateRoute>
         } />
         <Route path="*" element={<Navigate to="/" />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
       </Routes>
     </>
   );
